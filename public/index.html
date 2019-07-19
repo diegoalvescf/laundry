@@ -8,7 +8,41 @@
 
     <title>Teste</title>
 </head>
-<body>
+<body id="form">
     <h1 class="main">Servidor NodeJS</h1>
+    <input type="text" id="user" placeholder="Usuário">
+    <input type="password" id="pass" placeholder="Senha">
+    <button id="button">Enviar</button>
 </body>
 </html>
+
+<script>
+    document.getElementById("button").onclick = function(){
+        var usuario = document.getElementById("user").value;
+        var senha = document.getElementById("pass").value;
+        var obj = {
+            usuario,
+            senha
+        }
+
+        const options = {
+            method: "POST",
+            body: JSON.stringify(obj),
+            headers: {
+                "content-type":"application/json"
+            }
+        }
+        fetch("http://localhost:3000/login", options).then(response => {
+            return response.json();
+        }).then(data => {
+            var p = document.createElement("p");
+            var texto = document.createTextNode(data);
+            p.appendChild(texto);
+
+            var body = document.getElementById("form");
+            body.appendChild(p);
+        });
+    }
+</script>
+
+<!-- appendChild acrescenta a linha no final da pagina--> 
