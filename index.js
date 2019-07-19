@@ -6,6 +6,8 @@ const app = require("./config/server"); // importando as configurações do expr
 
 database(process.env.MONGO_URI);
 
-http.createServer(app).listen(3000, function() {  //porta de acesso
+const port = process.env.PORT || 3000 // 
+
+http.createServer(app).listen(port, function() {  //porta de acesso
     console.log("Servidor Iniciado na portaa 3000");
 });

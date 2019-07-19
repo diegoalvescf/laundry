@@ -1,7 +1,7 @@
 const mongoose = require("mongoose"); 
 const Schema = mongoose.Schema; // Define o modelo de dado que vai inserir no movimento
 
-const clienteSchema = newSchema({
+const clienteSchema = new Schema({
     documento: String,
     nome: String,
     telefone: String,
