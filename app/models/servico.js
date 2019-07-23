@@ -13,7 +13,7 @@ const servicoSchema = new Schema({
     itens: [
         {
             type: Schema.Types.ObjectId,
-            ref: "item"
+            ref: "item" // nome da const declarada dentro do item http://prntscr.com/oio3zk
         }
     ]
 },{timestamps: true}

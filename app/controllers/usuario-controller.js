@@ -15,7 +15,7 @@ class UsuarioController { // esse metodo é apenas para teste, para ver se todos
   }
 
   async usuarioValido(req, res) { // FUNÇÃO PARA VALIDAR SE JÁ EXISTE USUÁRIO CADASTRADO
-    const login = req.query.usuario;
+    const login = req.body.usuario;
     const registro = await usuario.find({ usuario: login }); // AQUI ESTA PASSANDO A CONDIÇÃO DE IGUALDADE SE EXISTE NO BANCO USUARIO E SENHA
     if (registro.length > 0) {
       return res.json(false);
