@@ -16,6 +16,12 @@ class ClienteController {
         }
     }
 
+    async findByNome(req, res) {
+        var regex = new RegExp("" + req.query.pesquisa + ".*$", "i");
+        const registros = await cliente.find({ nome: regex });
+        return res.json(registros);
+    }
+
     async store(req, res) {
         const registro = await cliente.create(req.body);
         return res.status(201).json(registro);

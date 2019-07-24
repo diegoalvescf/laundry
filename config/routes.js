@@ -9,21 +9,23 @@ const LoginController = require("../app/controllers/login-controller");
 // CLIENTES
 routes.get("/clientes", ClienteController.findAll);
 routes.get("/clientes/:id", ClienteController.findById);
+routes.get("/clientes-pesquisa/", ClienteController.findByNome);
 routes.post("/clientes", ClienteController.store);
 routes.put("/clientes/:id",ClienteController.update);
 routes.delete("/clientes/:id", ClienteController.delete);
 // ORDEM DE SERVIÇO
-routes.get("/servicos", servicoController.findAll);
-routes.get("/servicos/:id", servicoController.findById);
-routes.post("/servicos", servicoController.store);
-routes.put("/servicos/:id",servicoController.update);
-routes.delete("/servicos/:id", servicoController.delete);
+routes.get("/os", servicoController.findAll);
+routes.get("/os/:id", servicoController.findById);
+routes.post("/os", servicoController.store);
+routes.put("/os/:id",servicoController.update);
+routes.delete("/os/:id", servicoController.delete);
 // ITENS
-routes.get("/itens", itemController.findAll);
-routes.get("/itens/:id", itemController.findById);
-routes.post("/itens", itemController.store);
-routes.put("/itens/:id",itemController.update);
-routes.delete("/itens/:id", itemController.delete);
+routes.get("/itens", ItemController.findAll);
+routes.get("/itens/:id", ItemController.findById);
+outes.get("/itens-pesquisa", ItemController.findByDescricao);
+routes.post("/itens", ItemController.store);
+routes.put("/itens/:id", ItemController.update);
+routes.delete("/itens/:id", ItemController.delete);
 //USUARIO
 routes.get("/usuarios", UsuarioController.findAll);
 routes.post("/usuarios", UsuarioController.store);
@@ -34,3 +36,6 @@ routes.delete("/usuarios/:id", UsuarioController.delete);
 routes.post("/login", LoginController.fazerLogin);
 
 module.exports = routes;
+
+
+

@@ -16,6 +16,12 @@ class itemController {
         }
     }
 
+    async findByDescricao(req, res) {
+        var regex = new RegExp("" + req.query.pesquisa + ".*$", "i");
+        const registros = await item.find({ descricao: regex });
+        return res.json(registros);
+    }
+
     async store(req, res) {
         const registro = await item.create(req.body);
         return res.status(201).json(registro);

@@ -6,9 +6,12 @@ const servicoSchema = new Schema({
     dataSaida: Date,
     valorTotal: Number,
     cliente: {
-        type: Schema.Types.ObjectId, // busca o ID
-        ref: "cliente" // model servico
-    },
+        id: {
+            type: Schema.Types.ObjectId,
+            ref: "cliente"
+            },
+            nome: String
+    },	   
 
     itens: [
         {
