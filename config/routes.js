@@ -3,7 +3,7 @@ const routes = express.Router();
 
 const ClienteController = require("../app/controllers/cliente-controller");
 const servicoController = require("../app/controllers/os-controller");
-const itemController = require("../app/controllers/item-controller");
+const ItemController = require("../app/controllers/item-controller");
 const UsuarioController = require("../app/controllers/usuario-controller");
 const LoginController = require("../app/controllers/login-controller");
 // CLIENTES
@@ -22,7 +22,7 @@ routes.delete("/os/:id", servicoController.delete);
 // ITENS
 routes.get("/itens", ItemController.findAll);
 routes.get("/itens/:id", ItemController.findById);
-outes.get("/itens-pesquisa", ItemController.findByDescricao);
+routes.get("/itens-pesquisa", ItemController.findByDescricao);
 routes.post("/itens", ItemController.store);
 routes.put("/itens/:id", ItemController.update);
 routes.delete("/itens/:id", ItemController.delete);

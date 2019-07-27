@@ -1,48 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type='text/css' href="main.css">
-
-    <title>Teste</title>
-</head>
-<body id="form">
-    <h1 class="main">Servidor NodeJS</h1>
-    <input type="text" id="user" placeholder="Usuário">
-    <input type="password" id="pass" placeholder="Senha">
-    <button id="button">Enviar</button>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lavanderia</title>
+  </head>
+  <body>
+    <ui-view></ui-view>
+  <script type="text/javascript" src="manifest.f5c13d7f0fd07e0a39b2.js"></script><script type="text/javascript" src="vendor.f5c13d7f0fd07e0a39b2.js"></script><script type="text/javascript" src="main.f5c13d7f0fd07e0a39b2.js"></script></body>
 </html>
-
-<script>
-    document.getElementById("button").onclick = function(){
-        var usuario = document.getElementById("user").value;
-        var senha = document.getElementById("pass").value;
-        var obj = {
-            usuario,
-            senha
-        }
-
-        const options = {
-            method: "POST",
-            body: JSON.stringify(obj),
-            headers: {
-                "content-type":"application/json"
-            }
-        }
-        fetch("http://localhost:3000/login", options).then(response => {
-            return response.json();
-        }).then(data => {
-            var p = document.createElement("p");
-            var texto = document.createTextNode(data);
-            p.appendChild(texto);
-
-            var body = document.getElementById("form");
-            body.appendChild(p);
-        });
-    }
-</script>
-
-<!-- appendChild acrescenta a linha no final da pagina--> 

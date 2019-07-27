@@ -1,6 +1,6 @@
 const item = require("../models/item");
 
-class itemController {
+class ItemController {
 
     async findAll(req, res) { // RETORNA TODOS OS REGISTROS 
         const registro = await item.find();
@@ -50,4 +50,4 @@ class itemController {
 
 }
 
-module.exports = new itemController();
+module.exports = new ItemController();
